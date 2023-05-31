@@ -1,0 +1,35 @@
+import { ApolloServer } from '@apollo/server';
+import mongoose, { ConnectOptions } from 'mongoose';
+import dotenv from 'dotenv';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { resolvers } from './resolvers';
+import { startServer } from './serverConfig';
+
+dotenv.config();
+
+const typeDefs = readFileSync(join(__dirname, 'schema.graphql'), 'utf8');
+
+const port: number = Number(process.env.PORT) || 4001;
+
+mongoose
+    .connect(
+        process.env.MONGODB_URI as string,
+        {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+        } as ConnectOptions
+    )
+    .then(() => {
+        console.log('Connected to database');
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+});
+
+startServer(server, port);
