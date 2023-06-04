@@ -2,15 +2,7 @@ type Book {
     title: String
     author: String
 }
-typ TePola {
-    jcb
-    scd
-    csd
-    scds
-    scd
-}
 
 type Query {
     books: [Book]
-    bleBaza: TePola
 }

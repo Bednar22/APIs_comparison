@@ -1,12 +1,14 @@
-import { ApolloServer } from '@apollo/server';
+import { ApolloServer } from 'apollo-server-express';
 import mongoose, { ConnectOptions } from 'mongoose';
 import dotenv from 'dotenv';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { resolvers } from './resolvers';
-import { startServer } from './serverConfig';
+// import { startServer } from './serverConfig';
+import express from 'express';
 
 dotenv.config();
+const app = express();
 
 const typeDefs = readFileSync(join(__dirname, 'schema.graphql'), 'utf8');
 
@@ -32,4 +34,8 @@ const server = new ApolloServer({
     resolvers,
 });
 
-startServer(server, port);
+server.applyMiddleware({ app, path: '/graphql' });
+
+app.listen({ port: port }, () => {
+    console.log(`Apollo Server on http://localhost:${port}/graphql`);
+});
