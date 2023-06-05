@@ -1,15 +1,18 @@
 import express, { Request, Response } from 'express';
-import { Repos } from '../models/repos';
+import { Repo } from '../models/repos';
+import { findAllRepos, findRepoById } from '../mongoFunctions';
 
 const router = express.Router();
 
 router.get('/repos', [], async (req: Request, res: Response) => {
-    const repos = await Repos.find({});
+    const repos = await findAllRepos();
     return res.status(200).send(repos);
 });
 
 router.get('/repos/:id', [], async (req: Request, res: Response) => {
-    const repo = await Repos.findById(req.params.id);
+    console.log(req.params.id);
+    const repo = await findRepoById(req.params.id);
+    console.log(repo);
     return res.status(200).send(repo);
 });
 

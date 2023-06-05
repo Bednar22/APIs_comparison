@@ -2,6 +2,11 @@ import express, { Application } from 'express';
 import dotenv from 'dotenv';
 import mongoose, { ConnectOptions } from 'mongoose';
 import { reposRouter } from './routes/repos';
+import { commitsRouter } from './routes/commits';
+import { testRouter } from './routes/testRoutes';
+import { contributorsRouter } from './routes/contributors';
+import { issuesRouter } from './routes/issues';
+import { langsRouter } from './routes/languages';
 
 dotenv.config();
 
@@ -11,6 +16,11 @@ app.use(express.json());
 
 //ROUTES
 app.use(reposRouter);
+app.use(commitsRouter);
+app.use(testRouter);
+app.use(contributorsRouter);
+app.use(issuesRouter);
+app.use(langsRouter);
 
 //DATABASE CONNECTION
 mongoose
@@ -24,7 +34,7 @@ mongoose
     .then(() => {
         console.log('Connected to database');
     })
-    .catch((err) => {
+    .catch((err: Error) => {
         console.log(err);
     });
 
