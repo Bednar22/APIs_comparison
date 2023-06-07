@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { resolvers } from './resolvers';
-// import { startServer } from './serverConfig';
 import express from 'express';
 
 dotenv.config();
@@ -34,7 +33,12 @@ const server = new ApolloServer({
     resolvers,
 });
 
-server.applyMiddleware({ app, path: '/graphql' });
+const startServer = async (server: ApolloServer) => {
+    await server.start();
+    server.applyMiddleware({ app, path: '/graphql' });
+};
+
+startServer(server);
 
 app.listen({ port: port }, () => {
     console.log(`Apollo Server on http://localhost:${port}/graphql`);
