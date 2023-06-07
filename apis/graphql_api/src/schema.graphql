@@ -1,7 +1,3 @@
-type Book {
-    title: String
-    author: String
-}
 type mongoID {
     oid: String
 }
@@ -417,9 +413,20 @@ type PostTest {
     field9: String
 }
 
+type AllColletions {
+    commits: [Commit]
+    issues: [Issue]
+    contributors: [Contributor]
+    releases: [Release]
+}
+
 type Query {
-    books: [Book]
     commits(id: ID!): [Commit]
+    issues(id: ID!): [Issue]
+    contributors(id: ID!): [Contributor]
+    releases(id: ID!): [Release]
+    allRepos: [Repo]
+    repoById(id: ID!): Repo
 }
 
 # query {

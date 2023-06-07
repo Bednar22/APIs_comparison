@@ -4,6 +4,7 @@ import { Issue } from './models/issues';
 import { Contributor } from './models/contributors';
 import { Commit } from './models/commits';
 import { PostTest } from './models/postTest';
+import { Release } from './models/releases';
 
 import { PostTestI } from './types';
 import { RepoI } from './types';
@@ -14,6 +15,7 @@ export const findAllCommitsById = async (id: string) => await Commit.find({ repo
 export const findAllIssuesById = async (id: string) => await Issue.find({ repoId: id });
 export const findAllContributorsById = async (id: string) => await Contributor.find({ repoId: id });
 export const findAllLanguagesById = async (id: string) => await Language.find({ repoId: id });
+export const findAllReleasesById = async (id: string) => await Release.find({ repoId: id });
 export const addObject = async (data: PostTestI) => {
     const newObject = new PostTest({
         id: Date.now(),

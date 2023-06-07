@@ -7,6 +7,7 @@ import { testRouter } from './routes/testRoutes';
 import { contributorsRouter } from './routes/contributors';
 import { issuesRouter } from './routes/issues';
 import { langsRouter } from './routes/languages';
+import { releasesRouter } from './routes/releases';
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ app.use(testRouter);
 app.use(contributorsRouter);
 app.use(issuesRouter);
 app.use(langsRouter);
+app.use(releasesRouter);
 
 //DATABASE CONNECTION
 mongoose

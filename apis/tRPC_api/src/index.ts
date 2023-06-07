@@ -10,6 +10,7 @@ import { commitsRouter } from './routers/commits';
 import { issuesRouter } from './routers/issues';
 import { contributorsRouter } from './routers/contributors';
 import { langsRouter } from './routers/languages';
+import { releasesRouter } from './routers/releases';
 
 dotenv.config();
 
@@ -23,6 +24,7 @@ const appRouter = router({
     issues: issuesRouter,
     languages: langsRouter,
     contributors: contributorsRouter,
+    releases: releasesRouter,
 });
 export type AppRouter = typeof appRouter;
 

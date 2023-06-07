@@ -1,13 +1,33 @@
 import { books } from './db';
-import { findAllCommitsById } from './mongoFunctions';
+import {
+    findAllCommitsById,
+    findAllContributorsById,
+    findAllIssuesById,
+    findAllRepos,
+    findAllLanguagesById,
+    findRepoById,
+    findAllReleasesById,
+} from './mongoFunctions';
 
 export const resolvers = {
     Query: {
-        books: () => books,
-        commits: (parent: any, args: any) => {
-            const { id } = args;
-            console.log(args);
-            return findAllCommitsById(id);
+        commits: (parent: any, args: { id: string }) => {
+            return findAllCommitsById(args.id);
+        },
+        contributors: (parent: any, args: { id: string }) => {
+            return findAllContributorsById(args.id);
+        },
+        issues: (parent: any, args: { id: string }) => {
+            return findAllIssuesById(args.id);
+        },
+        releses: (parent: any, args: { id: string }) => {
+            return findAllReleasesById(args.id);
+        },
+        allRepos: () => {
+            return findAllRepos();
+        },
+        repoById: (parent: any, args: { id: string }) => {
+            return findRepoById(args.id);
         },
     },
 };
