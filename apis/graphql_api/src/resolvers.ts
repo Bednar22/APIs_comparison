@@ -1,4 +1,3 @@
-import { books } from './db';
 import {
     findAllCommitsById,
     findAllContributorsById,
@@ -20,7 +19,7 @@ export const resolvers = {
         issues: (parent: any, args: { id: string }) => {
             return findAllIssuesById(args.id);
         },
-        releses: (parent: any, args: { id: string }) => {
+        releases: (parent: any, args: { id: string }) => {
             return findAllReleasesById(args.id);
         },
         allRepos: () => {
@@ -28,6 +27,10 @@ export const resolvers = {
         },
         repoById: (parent: any, args: { id: string }) => {
             return findRepoById(args.id);
+        },
+        langs: async (parent: any, args: { id: string }) => {
+            console.log(await findAllLanguagesById(args.id));
+            return await findAllLanguagesById(args.id);
         },
     },
 };

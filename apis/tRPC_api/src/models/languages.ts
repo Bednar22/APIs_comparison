@@ -6,7 +6,12 @@ const languageSchema = new mongoose.Schema({
         $oid: String,
     },
     repoId: Number,
-    dynamic: mongoose.Schema.Types.Mixed,
+    languages: [
+        {
+            name: String,
+            value: Number,
+        },
+    ],
 });
 
 const Language = mongoose.model('languages', languageSchema);

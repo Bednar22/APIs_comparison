@@ -11,24 +11,60 @@ const releaseSchema = new mongoose.Schema({
     html_url: String,
     id: Number,
     author: {
-        login: String,
-        id: Number,
-        node_id: String,
-        avatar_url: String,
-        gravatar_id: String,
-        url: String,
-        html_url: String,
-        followers_url: String,
-        following_url: String,
-        gists_url: String,
-        starred_url: String,
-        subscriptions_url: String,
-        organizations_url: String,
-        repos_url: String,
-        events_url: String,
-        received_events_url: String,
-        type: String,
-        site_admin: Boolean,
+        login: {
+            type: String,
+        },
+        id: {
+            type: Number,
+        },
+        node_id: {
+            type: String,
+        },
+        avatar_url: {
+            type: String,
+        },
+        gravatar_id: {
+            type: String,
+        },
+        url: {
+            type: String,
+        },
+        html_url: {
+            type: String,
+        },
+        followers_url: {
+            type: String,
+        },
+        following_url: {
+            type: String,
+        },
+        gists_url: {
+            type: String,
+        },
+        starred_url: {
+            type: String,
+        },
+        subscriptions_url: {
+            type: String,
+        },
+        organizations_url: {
+            type: String,
+        },
+        repos_url: {
+            type: String,
+        },
+        events_url: {
+            type: String,
+        },
+        received_events_url: {
+            type: String,
+        },
+        type: {
+            type: String,
+        },
+        site_admin: {
+            type: Boolean,
+        },
     },
     node_id: String,
     tag_name: String,

@@ -161,7 +161,7 @@ export interface LanguageI {
         $oid: string;
     };
     repoId: number;
-    [key: string]: any;
+    languages: [{ name: string; value: number }];
 }
 
 export interface IssueI {

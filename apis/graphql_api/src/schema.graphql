@@ -246,14 +246,6 @@ type Release {
     repoId: Int
 }
 
-# type Language {
-#     _id: {
-#         $oid: String
-#     }
-#     repoId: Int
-#     [key: String]: any
-# }
-
 type Label {
     id: Int
     node_id: String
@@ -420,6 +412,17 @@ type AllColletions {
     releases: [Release]
 }
 
+type Language {
+    name: String
+    value: Int
+}
+
+type Languages {
+    _id: mongoID
+    languages: [Language]
+    repoId: Int
+}
+
 type Query {
     commits(id: ID!): [Commit]
     issues(id: ID!): [Issue]
@@ -427,6 +430,7 @@ type Query {
     releases(id: ID!): [Release]
     allRepos: [Repo]
     repoById(id: ID!): Repo
+    langs(id: ID!): Languages
 }
 
 # query {
