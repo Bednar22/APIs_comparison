@@ -10,9 +10,7 @@ router.get('/repos', [], async (req: Request, res: Response) => {
 });
 
 router.get('/repos/:id', [], async (req: Request, res: Response) => {
-    console.log(req.params.id);
     const repo = await findRepoById(req.params.id);
-    console.log(repo);
     return res.status(200).send(repo);
 });
 

@@ -2,9 +2,6 @@ import mongoose from 'mongoose';
 import { RepoI } from '../types';
 
 const repoSchema = new mongoose.Schema({
-    _id: {
-        type: String,
-    },
     id: {
         type: Number,
     },

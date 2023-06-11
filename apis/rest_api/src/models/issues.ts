@@ -2,9 +2,6 @@ import mongoose from 'mongoose';
 import { IssueI } from '../types';
 
 const issueSchema = new mongoose.Schema({
-    _id: {
-        $oid: String,
-    },
     url: String,
     repository_url: String,
     labels_url: String,

@@ -164,6 +164,11 @@ export interface LanguageI {
     languages: [{ name: string; value: number }];
 }
 
+export interface LanguageInput {
+    repoId: number;
+    languages: { name: string; value: number }[];
+}
+
 export interface IssueI {
     _id: {
         $oid: string;

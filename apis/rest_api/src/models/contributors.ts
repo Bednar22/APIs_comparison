@@ -2,9 +2,6 @@ import mongoose from 'mongoose';
 import { ContributorI } from '../types';
 
 const contributorSchema = new mongoose.Schema({
-    _id: {
-        $oid: String,
-    },
     login: String,
     id: Number,
     node_id: String,

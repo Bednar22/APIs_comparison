@@ -3,11 +3,9 @@ import { Language } from './models/languages';
 import { Issue } from './models/issues';
 import { Contributor } from './models/contributors';
 import { Commit } from './models/commits';
-import { PostTest } from './models/postTest';
 import { Release } from './models/releases';
 
-import { PostTestI } from './types';
-import { RepoI } from './types';
+import { RepoI, LanguageInput } from './types';
 
 export const findAllRepos = async (): Promise<RepoI[]> => await Repo.find({});
 export const findRepoById = async (id: string): Promise<RepoI | null> => await Repo.findOne({ id: id });
@@ -16,25 +14,35 @@ export const findAllIssuesById = async (id: string) => await Issue.find({ repoId
 export const findAllContributorsById = async (id: string) => await Contributor.find({ repoId: id });
 export const findAllLanguagesById = async (id: string) => await Language.findOne({ repoId: id });
 export const findAllReleasesById = async (id: string) => await Release.find({ repoId: id });
-export const addObject = async (data: PostTestI) => {
-    const newObject = new PostTest({
-        id: Date.now(),
-        field1: data.field1,
-        field2: data.field2,
-        field3: data.field3,
-        field4: data.field4,
-        field5: data.field5,
-        field6: data.field6,
-        field7: data.field7,
-        field8: data.field8,
-        field9: data.field9,
+export const addLanguageInfo = async (data: LanguageInput) => {
+    const newLanguage = new Language({
+        repoId: data.repoId,
+        languages: data.languages,
     });
     try {
-        await newObject.save();
-        console.log('Object added to postTest collection successfully!');
+        await newLanguage.save();
     } catch (err) {
-        console.error('Error saving object:', err);
-        return -1;
+        return 'Error while adding new object';
     }
-    return 1;
+    return 'Object added successfully';
+};
+
+export const removeLanguage = async (id: number) => {
+    try {
+        await Language.deleteOne({ repoId: id });
+    } catch (err) {
+        return 'Error while deleting language from database';
+    }
+    return 'Object deleted successfully';
+};
+
+export const updateLanguage = async (id: number, newLanguages: { name: string; value: number }[]) => {
+    const updatedLanguage = { $set: { languages: newLanguages } };
+
+    try {
+        await Language.updateOne({ repoId: id }, updatedLanguage);
+    } catch (err) {
+        return 'Error while updating language in database';
+    }
+    return 'Object updated successfully';
 };

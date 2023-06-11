@@ -2,9 +2,6 @@ import mongoose from 'mongoose';
 import { CommitI } from '../types';
 
 const commitSchema = new mongoose.Schema({
-    _id: {
-        $oid: String,
-    },
     sha: String,
     node_id: String,
     commit: {

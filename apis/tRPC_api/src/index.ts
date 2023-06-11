@@ -5,7 +5,6 @@ import mongoose, { ConnectOptions } from 'mongoose';
 // ROUTERS
 import { router } from './trpc';
 import { reposRouter } from './routers/repos';
-import { testRouter } from './routers/testRouter';
 import { commitsRouter } from './routers/commits';
 import { issuesRouter } from './routers/issues';
 import { contributorsRouter } from './routers/contributors';
@@ -19,7 +18,6 @@ const app = express();
 
 const appRouter = router({
     repos: reposRouter,
-    tests: testRouter,
     commits: commitsRouter,
     issues: issuesRouter,
     languages: langsRouter,

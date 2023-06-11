@@ -2,9 +2,6 @@ import mongoose from 'mongoose';
 import { LanguageI } from '../types';
 
 const languageSchema = new mongoose.Schema({
-    _id: {
-        $oid: String,
-    },
     repoId: Number,
     languages: [
         {

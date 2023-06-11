@@ -2,9 +2,6 @@ import mongoose from 'mongoose';
 import { ReleaseI } from '../types';
 
 const releaseSchema = new mongoose.Schema({
-    _id: {
-        $oid: String,
-    },
     url: String,
     assets_url: String,
     upload_url: String,

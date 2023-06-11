@@ -157,11 +157,13 @@ export interface ReleaseI {
 }
 
 export interface LanguageI {
-    _id: {
-        $oid: string;
-    };
     repoId: number;
     languages: [{ name: string; value: number }];
+}
+
+export interface LanguageInput {
+    repoId: number;
+    languages: { name: string; value: number }[];
 }
 
 export interface IssueI {

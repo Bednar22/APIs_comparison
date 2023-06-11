@@ -423,82 +423,28 @@ type Languages {
     repoId: Int
 }
 
-type Query {
-    commits(id: ID!): [Commit]
-    issues(id: ID!): [Issue]
-    contributors(id: ID!): [Contributor]
-    releases(id: ID!): [Release]
-    allRepos: [Repo]
-    repoById(id: ID!): Repo
-    langs(id: ID!): Languages
+input SingleLanguageInput {
+    name: String
+    value: Int
 }
 
-# query {
-#   commits(id:13491895) {
-#     _id{
-#       oid
-#     }
-#     sha,
-#     node_id,
-#     commit {
-#       author {
-#         name,
-#         email,
-#         date
-#       },
-#       committer {
-#         email,
-#         name,
-#         date
-#       }
-#       message,
-#       tree{
-#         sha,
-#         url
-#       },
-#       url,
-#       comment_count,
-#       verification {
-#         payload,
-#         reason,
-#         signature,
-#         verified
-#       }
-#     }
-#   url,
-#   html_url,
-#   comments_url,
-#   author {
-#     avatar_url,
-#     events_url,
-#     followers_url,
-#     gists_url,
-#     html_url,
-#     gravatar_id,
-#     id,
-#     login,
-#     node_id,
-#     organizations_url,
-#     received_events_url
-#   },
-#   committer {
-#     avatar_url,
-#     events_url,
-#     followers_url,
-#     gists_url,
-#     html_url,
-#     gravatar_id,
-#     id,
-#     login,
-#     node_id,
-#     organizations_url,
-#     received_events_url,
-#   },
-#   repoId,
-#   parents {
-#     html_url,
-#     sha,
-#     url
-#   }
-#   }
-# }
+input LanguageInput {
+    repoId: Int
+    languages: [SingleLanguageInput]
+}
+
+type Query {
+    allRepos: [Repo]
+    commits(id: Int!): [Commit]
+    issues(id: Int!): [Issue]
+    contributors(id: Int!): [Contributor]
+    releases(id: Int!): [Release]
+    repoById(id: Int!): Repo
+    langs(id: Int!): Languages
+}
+
+type Mutation {
+    addLanguage(input: LanguageInput): String
+    removeLanguage(id: Int!): String
+    updateLanguage(input: LanguageInput): String
+}
