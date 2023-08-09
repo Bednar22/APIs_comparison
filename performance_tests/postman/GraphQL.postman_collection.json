@@ -1,0 +1,411 @@
+{
+	"info": {
+		"_postman_id": "cf6c2c22-aa79-4e3b-bfb8-a289a3c68500",
+		"name": "GraphQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all repos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query  {\r\n  allRepos {\r\n    _id {\r\n      oid\r\n    }\r\n    id\r\n    node_id\r\n    name\r\n    full_name\r\n    private\r\n    owner {\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      repos_url\r\n      events_url\r\n      organizations_url\r\n      received_events_url\r\n      site_admin\r\n      type\r\n    }\r\n    html_url\r\n    description\r\n    fork\r\n    url\r\n    forks_url\r\n    keys_url\r\n    collaborators_url\r\n    teams_url\r\n    hooks_url\r\n    issue_events_url\r\n    events_url\r\n    assignees_url\r\n    branches_url\r\n    tags_url\r\n    blobs_url\r\n    git_tags_url\r\n    git_refs_url\r\n    trees_url\r\n    statuses_url\r\n    languages_url\r\n    stargazers_url\r\n    contributors_url\r\n    subscribers_url\r\n    commits_url\r\n    git_commits_url\r\n    subscription_url\r\n    issue_comment_url\r\n    comments_url\r\n    contents_url\r\n    compare_url\r\n    merges_url\r\n    archive_url\r\n    downloads_url\r\n    issues_url\r\n    pulls_url\r\n    milestones_url\r\n    notifications_url\r\n    labels_url\r\n    releases_url\r\n    deployments_url\r\n    created_at\r\n    updated_at\r\n    pushed_at\r\n    git_url\r\n    ssh_url\r\n    clone_url\r\n    svn_url\r\n    homepage\r\n    size\r\n    stargazers_count\r\n    watchers_count\r\n    language\r\n    has_issues\r\n    has_projects\r\n    has_downloads\r\n    has_wiki\r\n    has_pages\r\n    has_discussions\r\n    forks_count\r\n    mirror_url\r\n    disabled\r\n    archived\r\n    open_issues_count\r\n    license {\r\n      url\r\n      node_id\r\n      spdx_id\r\n      name\r\n      key\r\n    }\r\n    allow_forking\r\n    is_template\r\n    web_commit_signoff_required\r\n    topics\r\n    visibility\r\n    forks\r\n    open_issues\r\n    watchers\r\n    default_branch\r\n    score\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get repo by id",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query  {\r\n  repoById(id: 13491895 ) {\r\n    _id {\r\n      oid\r\n    }\r\n    id\r\n    node_id\r\n    name\r\n    full_name\r\n    private\r\n    owner {\r\n      html_url\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      followers_url\r\n      gists_url\r\n      following_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    html_url\r\n    description\r\n    fork\r\n    forks_url\r\n    url\r\n    keys_url\r\n    collaborators_url\r\n    teams_url\r\n    hooks_url\r\n    issue_events_url\r\n    events_url\r\n    assignees_url\r\n    branches_url\r\n    tags_url\r\n    blobs_url\r\n    git_tags_url\r\n    git_refs_url\r\n    trees_url\r\n    statuses_url\r\n    languages_url\r\n    stargazers_url\r\n    contributors_url\r\n    subscribers_url\r\n    subscription_url\r\n    commits_url\r\n    git_commits_url\r\n    comments_url\r\n    issue_comment_url\r\n    contents_url\r\n    compare_url\r\n    archive_url\r\n    merges_url\r\n    downloads_url\r\n    issues_url\r\n    pulls_url\r\n    milestones_url\r\n    notifications_url\r\n    labels_url\r\n    releases_url\r\n    deployments_url\r\n    created_at\r\n    updated_at\r\n    pushed_at\r\n    git_url\r\n    ssh_url\r\n    clone_url\r\n    svn_url\r\n    homepage\r\n    size\r\n    stargazers_count\r\n    watchers_count\r\n    language\r\n    has_issues\r\n    has_projects\r\n    has_downloads\r\n    has_wiki\r\n    has_pages\r\n    has_discussions\r\n    forks_count\r\n    mirror_url\r\n    archived\r\n    disabled\r\n    open_issues_count\r\n    license {\r\n      key\r\n      name\r\n      spdx_id\r\n      url\r\n      node_id\r\n    }\r\n    allow_forking\r\n    is_template\r\n    web_commit_signoff_required\r\n    topics\r\n    visibility\r\n    forks\r\n    open_issues\r\n    watchers\r\n    default_branch\r\n    score\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new language object",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dataArray = [1,2,3,4,5,6,7,8,9,10];\r",
+							"\r",
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"\r",
+							"pm.globals.set(\"varVolume\", dataArray[item]);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"pm.globals.set(\"itemOfArray\", Number(item) + 1);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  addLanguage(input: {repoId: {{varVolume}}, languages: [{name: \"GTest\", value: 2}]})\r\n}",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update language object",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dataArray = [1,2,3,4,5,6,7,8,9,10];\r",
+							"\r",
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"\r",
+							"pm.globals.set(\"varVolume\", dataArray[item]);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"pm.globals.set(\"itemOfArray\", Number(item) + 1);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  updateLanguage(input: {repoId: {{varVolume}}, languages: [{name: \"GTestUpdated\", value: 2}]})\r\n}",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete language object",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dataArray = [1,2,3,4,5,6,7,8,9,10];\r",
+							"\r",
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"\r",
+							"pm.globals.set(\"varVolume\", dataArray[item]);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"pm.globals.set(\"itemOfArray\", Number(item) + 1);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation {\r\n  removeLanguage(id: {{varVolume}})\r\n}",
+						"variables": ""
+					},
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get languages for repo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  langs(id: 172953845) {\r\n    _id {\r\n      oid\r\n    }\r\n    languages {\r\n      name\r\n      value\r\n    }\r\n    repoId\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get commits for repo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query  {\r\n  commits(id: 172953845) {\r\n    committer {\r\n      login\r\n    }\r\n    _id {\r\n      oid\r\n    }\r\n    sha\r\n    node_id\r\n    commit {\r\n      author {\r\n        email\r\n        name\r\n        date\r\n      }\r\n      committer {\r\n        name\r\n        email\r\n        date\r\n      }\r\n      message\r\n      tree {\r\n        sha\r\n        url\r\n      }\r\n      url\r\n      comment_count\r\n      verification {\r\n        verified\r\n        reason\r\n        signature\r\n        payload\r\n      }\r\n    }\r\n    url\r\n    html_url\r\n    comments_url\r\n    author {\r\n      node_id\r\n      id\r\n      login\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    parents {\r\n      sha\r\n      url\r\n      html_url\r\n    }\r\n    repoId\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get issues for repo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  issues(id: 172953845) {\r\n    _id {\r\n      oid\r\n    }\r\n    url\r\n    repository_url\r\n    labels_url\r\n    comments_url\r\n    events_url\r\n    html_url\r\n    id\r\n    node_id\r\n    Int\r\n    title\r\n    user {\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    labels {\r\n      id\r\n      node_id\r\n      url\r\n      name\r\n      color\r\n      default\r\n      description\r\n    }\r\n    state\r\n    locked\r\n    assignee\r\n    assignees {\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    milestone\r\n    comments\r\n    created_at\r\n    updated_at\r\n    closed_at\r\n    author_association\r\n    active_lock_reason\r\n    draft\r\n    pull_request {\r\n      url\r\n      html_url\r\n      diff_url\r\n      patch_url\r\n      merged_at\r\n    }\r\n    body\r\n    reactions {\r\n      url\r\n      total_count\r\n      _1plus\r\n      _1minus\r\n      laugh\r\n      hooray\r\n      confused\r\n      heart\r\n      rocket\r\n      eyes\r\n    }\r\n    timeline_url\r\n    performed_via_github_app\r\n    state_reason\r\n    repoId\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get contributors for repo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  contributors(id: 172953845) {\r\n    _id {\r\n      oid\r\n    }\r\n    login\r\n    id\r\n    node_id\r\n    avatar_url\r\n    gravatar_id\r\n    url\r\n    html_url\r\n    followers_url\r\n    following_url\r\n    gists_url\r\n    starred_url\r\n    subscriptions_url\r\n    organizations_url\r\n    repos_url\r\n    events_url\r\n    received_events_url\r\n    type\r\n    site_admin\r\n    contributions\r\n    repoId\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get releases for repo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  releases(id: 172953845) {\r\n    _id {\r\n      oid\r\n    }\r\n    url\r\n    assets_url\r\n    upload_url\r\n    html_url\r\n    id\r\n    author {\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    node_id\r\n    tag_name\r\n    target_commitish\r\n    name\r\n    draft\r\n    prerelease\r\n    created_at\r\n    published_at\r\n    assets {\r\n      url\r\n      id\r\n      node_id\r\n      name\r\n      label\r\n      uploader {\r\n        login\r\n        id\r\n        node_id\r\n        avatar_url\r\n        gravatar_id\r\n        url\r\n        html_url\r\n        followers_url\r\n        following_url\r\n        gists_url\r\n        starred_url\r\n        subscriptions_url\r\n        organizations_url\r\n        repos_url\r\n        events_url\r\n        received_events_url\r\n        type\r\n        site_admin\r\n      }\r\n      content_type\r\n      state\r\n      size\r\n      download_count\r\n      created_at\r\n      updated_at\r\n      browser_download_url\r\n    }\r\n    tarball_url\r\n    zipball_url\r\n    body\r\n    reactions {\r\n      url\r\n      total_count\r\n      _1plus\r\n      _1minus\r\n      laugh\r\n      hooray\r\n      confused\r\n      heart\r\n      rocket\r\n      eyes\r\n    }\r\n    repoId\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  langs(id: 172953845) {\r\n    _id {\r\n      oid\r\n    }\r\n    languages {\r\n      name\r\n      value\r\n    }\r\n    repoId\r\n  }\r\n  releases(id: 172953845) {\r\n    _id {\r\n      oid\r\n    }\r\n    url\r\n    assets_url\r\n    upload_url\r\n    html_url\r\n    id\r\n    author {\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    node_id\r\n    tag_name\r\n    target_commitish\r\n    name\r\n    draft\r\n    prerelease\r\n    created_at\r\n    published_at\r\n    assets {\r\n      url\r\n      id\r\n      node_id\r\n      name\r\n      label\r\n      uploader {\r\n        login\r\n        id\r\n        node_id\r\n        avatar_url\r\n        gravatar_id\r\n        url\r\n        html_url\r\n        followers_url\r\n        following_url\r\n        gists_url\r\n        starred_url\r\n        subscriptions_url\r\n        organizations_url\r\n        repos_url\r\n        events_url\r\n        received_events_url\r\n        type\r\n        site_admin\r\n      }\r\n      content_type\r\n      state\r\n      size\r\n      download_count\r\n      created_at\r\n      updated_at\r\n      browser_download_url\r\n    }\r\n    tarball_url\r\n    zipball_url\r\n    body\r\n    reactions {\r\n      url\r\n      total_count\r\n      _1plus\r\n      _1minus\r\n      laugh\r\n      hooray\r\n      confused\r\n      heart\r\n      rocket\r\n      eyes\r\n    }\r\n    repoId\r\n  }\r\n  issues(id: 172953845) {\r\n    _id {\r\n      oid\r\n    }\r\n    url\r\n    repository_url\r\n    labels_url\r\n    comments_url\r\n    events_url\r\n    html_url\r\n    id\r\n    node_id\r\n    Int\r\n    title\r\n    user {\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    labels {\r\n      id\r\n      node_id\r\n      url\r\n      name\r\n      color\r\n      default\r\n      description\r\n    }\r\n    state\r\n    locked\r\n    assignee\r\n    assignees {\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    milestone\r\n    comments\r\n    created_at\r\n    updated_at\r\n    closed_at\r\n    author_association\r\n    active_lock_reason\r\n    draft\r\n    pull_request {\r\n      url\r\n      html_url\r\n      diff_url\r\n      patch_url\r\n      merged_at\r\n    }\r\n    body\r\n    reactions {\r\n      url\r\n      total_count\r\n      _1plus\r\n      _1minus\r\n      laugh\r\n      hooray\r\n      confused\r\n      heart\r\n      rocket\r\n      eyes\r\n    }\r\n    timeline_url\r\n    performed_via_github_app\r\n    state_reason\r\n    repoId\r\n  }\r\n  commits(id: 172953845) {\r\n    _id {\r\n      oid\r\n    }\r\n    sha\r\n    node_id\r\n    commit {\r\n      author {\r\n        name\r\n        email\r\n        date\r\n      }\r\n      committer {\r\n        name\r\n        email\r\n        date\r\n      }\r\n      message\r\n      tree {\r\n        sha\r\n        url\r\n      }\r\n      url\r\n      comment_count\r\n      verification {\r\n        verified\r\n        reason\r\n        signature\r\n        payload\r\n      }\r\n    }\r\n    url\r\n    html_url\r\n    comments_url\r\n    author {\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    committer {\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    parents {\r\n      sha\r\n      url\r\n      html_url\r\n    }\r\n    repoId\r\n  }\r\n  contributors(id: 172953845) {\r\n    _id {\r\n      oid\r\n    }\r\n    login\r\n    id\r\n    node_id\r\n    avatar_url\r\n    gravatar_id\r\n    url\r\n    html_url\r\n    followers_url\r\n    following_url\r\n    gists_url\r\n    starred_url\r\n    subscriptions_url\r\n    organizations_url\r\n    repos_url\r\n    events_url\r\n    received_events_url\r\n    type\r\n    site_admin\r\n    contributions\r\n    repoId\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get only 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query {\r\n  releases(id: 172953845) {\r\n    _id {\r\n      oid\r\n    }\r\n    url\r\n    assets_url\r\n    upload_url\r\n    html_url\r\n    id\r\n    author {\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    node_id\r\n    tag_name\r\n    target_commitish\r\n    name\r\n    draft\r\n    prerelease\r\n    created_at\r\n    published_at\r\n    assets {\r\n      url\r\n      id\r\n      node_id\r\n      name\r\n      label\r\n      uploader {\r\n        login\r\n        id\r\n        node_id\r\n        avatar_url\r\n        gravatar_id\r\n        url\r\n        html_url\r\n        followers_url\r\n        following_url\r\n        gists_url\r\n        starred_url\r\n        subscriptions_url\r\n        organizations_url\r\n        repos_url\r\n        events_url\r\n        received_events_url\r\n        type\r\n        site_admin\r\n      }\r\n      content_type\r\n      state\r\n      size\r\n      download_count\r\n      created_at\r\n      updated_at\r\n      browser_download_url\r\n    }\r\n    tarball_url\r\n    zipball_url\r\n    body\r\n    reactions {\r\n      url\r\n      total_count\r\n      _1plus\r\n      _1minus\r\n      laugh\r\n      hooray\r\n      confused\r\n      heart\r\n      rocket\r\n      eyes\r\n    }\r\n    repoId\r\n  }\r\n  issues(id: 172953845) {\r\n    _id {\r\n      oid\r\n    }\r\n    url\r\n    repository_url\r\n    labels_url\r\n    comments_url\r\n    events_url\r\n    html_url\r\n    id\r\n    node_id\r\n    Int\r\n    title\r\n    user {\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    labels {\r\n      id\r\n      node_id\r\n      url\r\n      name\r\n      color\r\n      default\r\n      description\r\n    }\r\n    state\r\n    locked\r\n    assignee\r\n    assignees {\r\n      login\r\n      id\r\n      node_id\r\n      avatar_url\r\n      gravatar_id\r\n      url\r\n      html_url\r\n      followers_url\r\n      following_url\r\n      gists_url\r\n      starred_url\r\n      subscriptions_url\r\n      organizations_url\r\n      repos_url\r\n      events_url\r\n      received_events_url\r\n      type\r\n      site_admin\r\n    }\r\n    milestone\r\n    comments\r\n    created_at\r\n    updated_at\r\n    closed_at\r\n    author_association\r\n    active_lock_reason\r\n    draft\r\n    pull_request {\r\n      url\r\n      html_url\r\n      diff_url\r\n      patch_url\r\n      merged_at\r\n    }\r\n    body\r\n    reactions {\r\n      url\r\n      total_count\r\n      _1plus\r\n      _1minus\r\n      laugh\r\n      hooray\r\n      confused\r\n      heart\r\n      rocket\r\n      eyes\r\n    }\r\n    timeline_url\r\n    performed_via_github_app\r\n    state_reason\r\n    repoId\r\n  }\r\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

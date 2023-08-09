@@ -1,450 +1,351 @@
 type mongoID {
-    oid: String
+  oid: String
 }
 
-# type LangTypes {
-#     Go
-# CMake
-# Jolie
-# MATLAB
-# XSLT
-# Sage
-# Markdown
-# Lua
-# Batchfile
-# Puppet
-# Java
-# HTML
-# Kaitai Struct
-# Roff
-# Emacs Lisp
-# Dockerfile
-# Lex
-# Jinja
-# RenderScript
-# Smarty
-# AspectJ
-# CoffeeScript
-# Vim Snippet
-# Blade
-# AIDL
-# AMPL
-# Python
-# Svelte
-# Mako
-# Starlark
-# Yacc
-# PHP
-# PLSQL
-# CSS
-# QMake
-# Tcl
-# C#
-# Scala
-# Pascal
-# EJS
-# PLpgSQL
-# Gherkin
-# Scheme
-# SCSS
-# Prolog
-# Rust
-# Sass
-# Vue
-# XS
-# Jupyter Notebook
-# jq
-# Raku
-# Groovy
-# Stylus
-# Cap'n Proto
-# Less
-# LLVM
-# Nunjucks
-# FreeMarker
-# Clojure
-# ActionScript
-# ANTLR
-# TypeScript
-# Cuda
-# UnrealScript
-# SmPL
-# JavaScript
-# Jsonnet
-# Ruby
-# Awk
-# C++
-# PowerShell
-# Perl
-# Kotlin
-# POV-Ray SDL
-# TeX
-# repoId
-# AppleScript
-# Pug
-# Objective-C
-# Makefile
-# Shell
-# RPC
-# Swift
-# Mustache
-# Vim Script
-# Objective-C++
-# HCL
-# M4
-# C
-# Assembly
-# HLSL
-# Fluent
-# sed
-# Nix
-# Cython
-# }
-
 type License {
-    key: String
-    name: String
-    spdx_id: String
-    url: String
-    node_id: String
+  key: String
+  name: String
+  spdx_id: String
+  url: String
+  node_id: String
 }
 
 type Repo {
-    _id: mongoID
-    id: Int
-    node_id: String
-    name: String
-    full_name: String
-    private: Boolean
-    owner: UserWithDetails
-    html_url: String
-    description: String
-    fork: Boolean
-    url: String
-    forks_url: String
-    keys_url: String
-    collaborators_url: String
-    teams_url: String
-    hooks_url: String
-    issue_events_url: String
-    events_url: String
-    assignees_url: String
-    branches_url: String
-    tags_url: String
-    blobs_url: String
-    git_tags_url: String
-    git_refs_url: String
-    trees_url: String
-    statuses_url: String
-    languages_url: String
-    stargazers_url: String
-    contributors_url: String
-    subscribers_url: String
-    subscription_url: String
-    commits_url: String
-    git_commits_url: String
-    comments_url: String
-    issue_comment_url: String
-    contents_url: String
-    compare_url: String
-    merges_url: String
-    archive_url: String
-    downloads_url: String
-    issues_url: String
-    pulls_url: String
-    milestones_url: String
-    notifications_url: String
-    labels_url: String
-    releases_url: String
-    deployments_url: String
-    created_at: String
-    updated_at: String
-    pushed_at: String
-    git_url: String
-    ssh_url: String
-    clone_url: String
-    svn_url: String
-    homepage: String
-    size: Int
-    stargazers_count: Int
-    watchers_count: Int
-    language: Boolean
-    has_issues: Boolean
-    has_projects: Boolean
-    has_downloads: Boolean
-    has_wiki: Boolean
-    has_pages: Boolean
-    has_discussions: Boolean
-    forks_count: Int
-    mirror_url: Boolean
-    archived: Boolean
-    disabled: Boolean
-    open_issues_count: Int
-    license: License
-    allow_forking: Boolean
-    is_template: Boolean
-    web_commit_signoff_required: Boolean
-    topics: [String]
-    visibility: String
-    forks: Int
-    open_issues: Int
-    watchers: Int
-    default_branch: String
-    score: Int
+  _id: mongoID
+  id: Int
+  node_id: String
+  name: String
+  full_name: String
+  private: Boolean
+  owner: UserWithDetails
+  html_url: String
+  description: String
+  fork: Boolean
+  url: String
+  forks_url: String
+  keys_url: String
+  collaborators_url: String
+  teams_url: String
+  hooks_url: String
+  issue_events_url: String
+  events_url: String
+  assignees_url: String
+  branches_url: String
+  tags_url: String
+  blobs_url: String
+  git_tags_url: String
+  git_refs_url: String
+  trees_url: String
+  statuses_url: String
+  languages_url: String
+  stargazers_url: String
+  contributors_url: String
+  subscribers_url: String
+  subscription_url: String
+  commits_url: String
+  git_commits_url: String
+  comments_url: String
+  issue_comment_url: String
+  contents_url: String
+  compare_url: String
+  merges_url: String
+  archive_url: String
+  downloads_url: String
+  issues_url: String
+  pulls_url: String
+  milestones_url: String
+  notifications_url: String
+  labels_url: String
+  releases_url: String
+  deployments_url: String
+  created_at: String
+  updated_at: String
+  pushed_at: String
+  git_url: String
+  ssh_url: String
+  clone_url: String
+  svn_url: String
+  homepage: String
+  size: Int
+  stargazers_count: Int
+  watchers_count: Int
+  language: Boolean
+  has_issues: Boolean
+  has_projects: Boolean
+  has_downloads: Boolean
+  has_wiki: Boolean
+  has_pages: Boolean
+  has_discussions: Boolean
+  forks_count: Int
+  mirror_url: Boolean
+  archived: Boolean
+  disabled: Boolean
+  open_issues_count: Int
+  license: License
+  allow_forking: Boolean
+  is_template: Boolean
+  web_commit_signoff_required: Boolean
+  topics: [String]
+  visibility: String
+  forks: Int
+  open_issues: Int
+  watchers: Int
+  default_branch: String
+  score: Int
 }
 
 type Assets {
-    url: String
-    id: Int
-    node_id: String
-    name: String
-    label: Boolean
-    uploader: UserWithDetails
-    content_type: String
-    state: String
-    size: Int
-    download_count: Int
-    created_at: String
-    updated_at: String
-    browser_download_url: String
+  url: String
+  id: Int
+  node_id: String
+  name: String
+  label: String
+  uploader: UserWithDetails
+  content_type: String
+  state: String
+  size: Int
+  download_count: Int
+  created_at: String
+  updated_at: String
+  browser_download_url: String
 }
 
 type Reactions {
-    url: String
-    total_count: Int
-    _1plus: Int
-    _1minus: Int
-    laugh: Int
-    hooray: Int
-    confused: Int
-    heart: Int
-    rocket: Int
-    eyes: Int
+  url: String
+  total_count: Int
+  _1plus: Int
+  _1minus: Int
+  laugh: Int
+  hooray: Int
+  confused: Int
+  heart: Int
+  rocket: Int
+  eyes: Int
 }
 
 type Release {
-    _id: mongoID
-    url: String
-    assets_url: String
-    upload_url: String
-    html_url: String
-    id: Int
-    author: UserWithDetails
-    node_id: String
-    tag_name: String
-    target_commitish: String
-    name: String
-    draft: Boolean
-    prerelease: Boolean
-    created_at: String
-    published_at: String
-    assets: [Assets]
-    tarball_url: String
-    zipball_url: String
-    body: String
-    reactions: Reactions
-    repoId: Int
+  _id: mongoID
+  url: String
+  assets_url: String
+  upload_url: String
+  html_url: String
+  id: Int
+  author: UserWithDetails
+  node_id: String
+  tag_name: String
+  target_commitish: String
+  name: String
+  draft: Boolean
+  prerelease: Boolean
+  created_at: String
+  published_at: String
+  assets: [Assets]
+  tarball_url: String
+  zipball_url: String
+  body: String
+  reactions: Reactions
+  repoId: Int
 }
 
 type Label {
-    id: Int
-    node_id: String
-    url: String
-    name: String
-    color: String
-    default: Boolean
-    description: String
+  id: Float
+  node_id: String
+  url: String
+  name: String
+  color: String
+  default: Boolean
+  description: String
 }
 
 type PullRequest {
-    url: String
-    html_url: String
-    diff_url: String
-    patch_url: String
-    merged_at: Boolean
+  url: String
+  html_url: String
+  diff_url: String
+  patch_url: String
+  merged_at: Boolean
 }
 
 type Issue {
-    _id: mongoID
-    url: String
-    repository_url: String
-    labels_url: String
-    comments_url: String
-    events_url: String
-    html_url: String
-    id: Int
-    node_id: String
-    Int: Int
-    title: String
-    user: UserWithDetails
-    labels: [Label]
-    state: String
-    locked: Boolean
-    assignee: Boolean
-    assignees: [UserWithDetails]
-    milestone: Boolean
-    comments: Int
-    created_at: String
-    updated_at: String
-    closed_at: Boolean
-    author_association: String
-    active_lock_reason: Boolean
-    draft: Boolean
-    pull_request: PullRequest
-    body: String
-    reactions: Reactions
-    timeline_url: String
-    performed_via_github_app: Boolean
-    state_reason: Boolean
-    repoId: Int
+  _id: mongoID
+  url: String
+  repository_url: String
+  labels_url: String
+  comments_url: String
+  events_url: String
+  html_url: String
+  id: Float
+  node_id: String
+  Int: Int
+  title: String
+  user: UserWithDetails
+  labels: [Label]
+  state: String
+  locked: Boolean
+  assignee: Boolean
+  assignees: [UserWithDetails]
+  milestone: Boolean
+  comments: Int
+  created_at: String
+  updated_at: String
+  closed_at: Boolean
+  author_association: String
+  active_lock_reason: Boolean
+  draft: Boolean
+  pull_request: PullRequest
+  body: String
+  reactions: Reactions
+  timeline_url: String
+  performed_via_github_app: Boolean
+  state_reason: Boolean
+  repoId: Int
 }
 
 type Contributor {
-    _id: mongoID
-    login: String
-    id: Int
-    node_id: String
-    avatar_url: String
-    gravatar_id: String
-    url: String
-    html_url: String
-    followers_url: String
-    following_url: String
-    gists_url: String
-    starred_url: String
-    subscriptions_url: String
-    organizations_url: String
-    repos_url: String
-    events_url: String
-    received_events_url: String
-    type: String
-    site_admin: Boolean
-    contributions: Int
-    repoId: Int
+  _id: mongoID
+  login: String
+  id: Int
+  node_id: String
+  avatar_url: String
+  gravatar_id: String
+  url: String
+  html_url: String
+  followers_url: String
+  following_url: String
+  gists_url: String
+  starred_url: String
+  subscriptions_url: String
+  organizations_url: String
+  repos_url: String
+  events_url: String
+  received_events_url: String
+  type: String
+  site_admin: Boolean
+  contributions: Int
+  repoId: Int
 }
 
 type UserWithDetails {
-    login: String
-    id: Int
-    node_id: String
-    avatar_url: String
-    gravatar_id: String
-    url: String
-    html_url: String
-    followers_url: String
-    following_url: String
-    gists_url: String
-    starred_url: String
-    subscriptions_url: String
-    organizations_url: String
-    repos_url: String
-    events_url: String
-    received_events_url: String
-    type: String
-    site_admin: Boolean
+  login: String
+  id: Int
+  node_id: String
+  avatar_url: String
+  gravatar_id: String
+  url: String
+  html_url: String
+  followers_url: String
+  following_url: String
+  gists_url: String
+  starred_url: String
+  subscriptions_url: String
+  organizations_url: String
+  repos_url: String
+  events_url: String
+  received_events_url: String
+  type: String
+  site_admin: Boolean
 }
 
 type Verification {
-    verified: Boolean
-    reason: String
-    signature: String
-    payload: String
+  verified: Boolean
+  reason: String
+  signature: String
+  payload: String
 }
 
 type UserShort {
-    name: String
-    email: String
-    date: String
+  name: String
+  email: String
+  date: String
 }
 
 type Tree {
-    sha: String
-    url: String
+  sha: String
+  url: String
 }
 
 type CommitUtil {
-    author: UserShort
-    committer: UserShort
-    message: String
-    tree: Tree
-    url: String
-    comment_count: Int
-    verification: Verification
+  author: UserShort
+  committer: UserShort
+  message: String
+  tree: Tree
+  url: String
+  comment_count: Int
+  verification: Verification
 }
 
 type Parent {
-    sha: String
-    url: String
-    html_url: String
+  sha: String
+  url: String
+  html_url: String
 }
 
 type Commit {
-    _id: mongoID
-    sha: String
-    node_id: String
-    commit: CommitUtil
-    url: String
-    html_url: String
-    comments_url: String
-    author: UserWithDetails
-    committer: UserWithDetails
-    parents: [Parent]
-    repoId: Int
+  _id: mongoID
+  sha: String
+  node_id: String
+  commit: CommitUtil
+  url: String
+  html_url: String
+  comments_url: String
+  author: UserWithDetails
+  committer: UserWithDetails
+  parents: [Parent]
+  repoId: Int
 }
 
 type PostTest {
-    id: Int
-    field1: String
-    field2: String
-    field3: String
-    field4: String
-    field5: String
-    field6: String
-    field7: String
-    field8: String
-    field9: String
+  id: Int
+  field1: String
+  field2: String
+  field3: String
+  field4: String
+  field5: String
+  field6: String
+  field7: String
+  field8: String
+  field9: String
 }
 
 type AllColletions {
-    commits: [Commit]
-    issues: [Issue]
-    contributors: [Contributor]
-    releases: [Release]
+  commits: [Commit]
+  issues: [Issue]
+  contributors: [Contributor]
+  releases: [Release]
 }
 
 type Language {
-    name: String
-    value: Int
+  name: String
+  value: Int
 }
 
 type Languages {
-    _id: mongoID
-    languages: [Language]
-    repoId: Int
+  _id: mongoID
+  languages: [Language]
+  repoId: Int
 }
 
 input SingleLanguageInput {
-    name: String
-    value: Int
+  name: String
+  value: Int
 }
 
 input LanguageInput {
-    repoId: Int
-    languages: [SingleLanguageInput]
+  repoId: Int
+  languages: [SingleLanguageInput]
 }
 
 type Query {
-    allRepos: [Repo]
-    commits(id: Int!): [Commit]
-    issues(id: Int!): [Issue]
-    contributors(id: Int!): [Contributor]
-    releases(id: Int!): [Release]
-    repoById(id: Int!): Repo
-    langs(id: Int!): Languages
+  allRepos: [Repo]
+  commits(id: Int!): [Commit]
+  issues(id: Int!): [Issue]
+  contributors(id: Int!): [Contributor]
+  releases(id: Int!): [Release]
+  repoById(id: Int!): Repo
+  langs(id: Int!): Languages
 }
 
 type Mutation {
-    addLanguage(input: LanguageInput): String
-    removeLanguage(id: Int!): String
-    updateLanguage(input: LanguageInput): String
+  addLanguage(input: LanguageInput): String
+  removeLanguage(id: Int!): String
+  updateLanguage(input: LanguageInput): String
 }

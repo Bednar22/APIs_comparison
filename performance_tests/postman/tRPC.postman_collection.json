@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "91b82d8c-99bf-4cf7-babc-ff9b4807454f",
+		"name": "tRPC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all repos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/trpc/repos.all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"trpc",
+						"repos.all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get repo by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/trpc/repos.byId?input=13491895",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"trpc",
+						"repos.byId"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "13491895"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new language object",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dataArray = [1,2,3,4,5,6,7,8,9,10];\r",
+							"\r",
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"\r",
+							"pm.globals.set(\"varVolume\", dataArray[item]);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"pm.globals.set(\"itemOfArray\", Number(item) + 1);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"repoId\": {{varVolume}},\r\n    \"languages\": [\r\n        {\r\n            \"name\": \"Test\",\r\n            \"value\": 22\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/trpc/languages.add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"trpc",
+						"languages.add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update language object",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dataArray = [1,2,3,4,5,6,7,8,9,10];\r",
+							"\r",
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"\r",
+							"pm.globals.set(\"varVolume\", dataArray[item]);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"pm.globals.set(\"itemOfArray\", Number(item) + 1);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"repoId\": {{varVolume}},\r\n    \"languages\": [\r\n        {\r\n            \"name\": \"TestTRPC\",\r\n            \"value\": 2222\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/trpc/languages.update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"trpc",
+						"languages.update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete language object",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dataArray = [1,2,3,4,5,6,7,8,9,10];\r",
+							"\r",
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"\r",
+							"pm.globals.set(\"varVolume\", dataArray[item]);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"pm.globals.set(\"itemOfArray\", Number(item) + 1);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"repoId\": {{varVolume}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/trpc/languages.delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"trpc",
+						"languages.delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get languages for repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/trpc/languages.byId?input=172953845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"trpc",
+						"languages.byId"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "172953845"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get commits for repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/trpc/commits.byId?input=172953845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"trpc",
+						"commits.byId"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "172953845"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get issues for repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/trpc/issues.byId?input=172953845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"trpc",
+						"issues.byId"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "172953845"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get contributors for repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/trpc/contributors.byId?input=172953845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"trpc",
+						"contributors.byId"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "172953845"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get releases for repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/trpc/releases.byId?input=172953845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"trpc",
+						"releases.byId"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "172953845"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllInfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/trpc/repos.allinfo?input=172953845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"trpc",
+						"repos.allinfo"
+					],
+					"query": [
+						{
+							"key": "input",
+							"value": "172953845"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

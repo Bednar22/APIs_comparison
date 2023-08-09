@@ -1,0 +1,1726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.5">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="GraphQL tests" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="POBIERANIE DANYCH - 100 POWTORZEŃ" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">101</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="Get repo by id" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument" enabled="true">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;query&quot;:&quot;query  {\n  repoById(id: 13491895 ) {\n    _id {\n      oid\n    }\n    id\n    node_id\n    name\n    full_name\n    private\n    owner {\n      html_url\n      login\n      id\n      node_id\n      avatar_url\n      gravatar_id\n      url\n      followers_url\n      gists_url\n      following_url\n      starred_url\n      subscriptions_url\n      organizations_url\n      repos_url\n      events_url\n      received_events_url\n      type\n      site_admin\n    }\n    html_url\n    description\n    fork\n    forks_url\n    url\n    keys_url\n    collaborators_url\n    teams_url\n    hooks_url\n    issue_events_url\n    events_url\n    assignees_url\n    branches_url\n    tags_url\n    blobs_url\n    git_tags_url\n    git_refs_url\n    trees_url\n    statuses_url\n    languages_url\n    stargazers_url\n    contributors_url\n    subscribers_url\n    subscription_url\n    commits_url\n    git_commits_url\n    comments_url\n    issue_comment_url\n    contents_url\n    compare_url\n    archive_url\n    merges_url\n    downloads_url\n    issues_url\n    pulls_url\n    milestones_url\n    notifications_url\n    labels_url\n    releases_url\n    deployments_url\n    created_at\n    updated_at\n    pushed_at\n    git_url\n    ssh_url\n    clone_url\n    svn_url\n    homepage\n    size\n    stargazers_count\n    watchers_count\n    language\n    has_issues\n    has_projects\n    has_downloads\n    has_wiki\n    has_pages\n    has_discussions\n    forks_count\n    mirror_url\n    archived\n    disabled\n    open_issues_count\n    license {\n      key\n      name\n      spdx_id\n      url\n      node_id\n    }\n    allow_forking\n    is_template\n    web_commit_signoff_required\n    topics\n    visibility\n    forks\n    open_issues\n    watchers\n    default_branch\n    score\n  }\n}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">4001</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/graphql</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+          <stringProp name="GraphQLHTTPSampler.query">query  {
+  repoById(id: 13491895 ) {
+    _id {
+      oid
+    }
+    id
+    node_id
+    name
+    full_name
+    private
+    owner {
+      html_url
+      login
+      id
+      node_id
+      avatar_url
+      gravatar_id
+      url
+      followers_url
+      gists_url
+      following_url
+      starred_url
+      subscriptions_url
+      organizations_url
+      repos_url
+      events_url
+      received_events_url
+      type
+      site_admin
+    }
+    html_url
+    description
+    fork
+    forks_url
+    url
+    keys_url
+    collaborators_url
+    teams_url
+    hooks_url
+    issue_events_url
+    events_url
+    assignees_url
+    branches_url
+    tags_url
+    blobs_url
+    git_tags_url
+    git_refs_url
+    trees_url
+    statuses_url
+    languages_url
+    stargazers_url
+    contributors_url
+    subscribers_url
+    subscription_url
+    commits_url
+    git_commits_url
+    comments_url
+    issue_comment_url
+    contents_url
+    compare_url
+    archive_url
+    merges_url
+    downloads_url
+    issues_url
+    pulls_url
+    milestones_url
+    notifications_url
+    labels_url
+    releases_url
+    deployments_url
+    created_at
+    updated_at
+    pushed_at
+    git_url
+    ssh_url
+    clone_url
+    svn_url
+    homepage
+    size
+    stargazers_count
+    watchers_count
+    language
+    has_issues
+    has_projects
+    has_downloads
+    has_wiki
+    has_pages
+    has_discussions
+    forks_count
+    mirror_url
+    archived
+    disabled
+    open_issues_count
+    license {
+      key
+      name
+      spdx_id
+      url
+      node_id
+    }
+    allow_forking
+    is_template
+    web_commit_signoff_required
+    topics
+    visibility
+    forks
+    open_issues
+    watchers
+    default_branch
+    score
+  }
+}</stringProp>
+          <stringProp name="GraphQLHTTPSampler.variables"></stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="Get all repos" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument" enabled="true">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;query&quot;:&quot;query  {\n  allRepos {\n    _id {\n      oid\n    }\n    id\n    node_id\n    name\n    full_name\n    private\n    owner {\n      login\n      id\n      node_id\n      avatar_url\n      gravatar_id\n      url\n      html_url\n      followers_url\n      following_url\n      gists_url\n      starred_url\n      subscriptions_url\n      repos_url\n      events_url\n      organizations_url\n      received_events_url\n      site_admin\n      type\n    }\n    html_url\n    description\n    fork\n    url\n    forks_url\n    keys_url\n    collaborators_url\n    teams_url\n    hooks_url\n    issue_events_url\n    events_url\n    assignees_url\n    branches_url\n    tags_url\n    blobs_url\n    git_tags_url\n    git_refs_url\n    trees_url\n    statuses_url\n    languages_url\n    stargazers_url\n    contributors_url\n    subscribers_url\n    commits_url\n    git_commits_url\n    subscription_url\n    issue_comment_url\n    comments_url\n    contents_url\n    compare_url\n    merges_url\n    archive_url\n    downloads_url\n    issues_url\n    pulls_url\n    milestones_url\n    notifications_url\n    labels_url\n    releases_url\n    deployments_url\n    created_at\n    updated_at\n    pushed_at\n    git_url\n    ssh_url\n    clone_url\n    svn_url\n    homepage\n    size\n    stargazers_count\n    watchers_count\n    language\n    has_issues\n    has_projects\n    has_downloads\n    has_wiki\n    has_pages\n    has_discussions\n    forks_count\n    mirror_url\n    disabled\n    archived\n    open_issues_count\n    license {\n      url\n      node_id\n      spdx_id\n      name\n      key\n    }\n    allow_forking\n    is_template\n    web_commit_signoff_required\n    topics\n    visibility\n    forks\n    open_issues\n    watchers\n    default_branch\n    score\n  }\n}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">4001</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/graphql</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+          <stringProp name="GraphQLHTTPSampler.query">query  {
+  allRepos {
+    _id {
+      oid
+    }
+    id
+    node_id
+    name
+    full_name
+    private
+    owner {
+      login
+      id
+      node_id
+      avatar_url
+      gravatar_id
+      url
+      html_url
+      followers_url
+      following_url
+      gists_url
+      starred_url
+      subscriptions_url
+      repos_url
+      events_url
+      organizations_url
+      received_events_url
+      site_admin
+      type
+    }
+    html_url
+    description
+    fork
+    url
+    forks_url
+    keys_url
+    collaborators_url
+    teams_url
+    hooks_url
+    issue_events_url
+    events_url
+    assignees_url
+    branches_url
+    tags_url
+    blobs_url
+    git_tags_url
+    git_refs_url
+    trees_url
+    statuses_url
+    languages_url
+    stargazers_url
+    contributors_url
+    subscribers_url
+    commits_url
+    git_commits_url
+    subscription_url
+    issue_comment_url
+    comments_url
+    contents_url
+    compare_url
+    merges_url
+    archive_url
+    downloads_url
+    issues_url
+    pulls_url
+    milestones_url
+    notifications_url
+    labels_url
+    releases_url
+    deployments_url
+    created_at
+    updated_at
+    pushed_at
+    git_url
+    ssh_url
+    clone_url
+    svn_url
+    homepage
+    size
+    stargazers_count
+    watchers_count
+    language
+    has_issues
+    has_projects
+    has_downloads
+    has_wiki
+    has_pages
+    has_discussions
+    forks_count
+    mirror_url
+    disabled
+    archived
+    open_issues_count
+    license {
+      url
+      node_id
+      spdx_id
+      name
+      key
+    }
+    allow_forking
+    is_template
+    web_commit_signoff_required
+    topics
+    visibility
+    forks
+    open_issues
+    watchers
+    default_branch
+    score
+  }
+}</stringProp>
+          <stringProp name="GraphQLHTTPSampler.variables"></stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="Get all info" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument" enabled="true">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;query&quot;:&quot;query {\n  langs(id: 172953845) {\n    _id {\n      oid\n    }\n    languages {\n      name\n      value\n    }\n    repoId\n  }\n  releases(id: 172953845) {\n    _id {\n      oid\n    }\n    url\n    assets_url\n    upload_url\n    html_url\n    id\n    author {\n      login\n      id\n      node_id\n      avatar_url\n      gravatar_id\n      url\n      html_url\n      followers_url\n      following_url\n      gists_url\n      starred_url\n      subscriptions_url\n      organizations_url\n      repos_url\n      events_url\n      received_events_url\n      type\n      site_admin\n    }\n    node_id\n    tag_name\n    target_commitish\n    name\n    draft\n    prerelease\n    created_at\n    published_at\n    assets {\n      url\n      id\n      node_id\n      name\n      label\n      uploader {\n        login\n        id\n        node_id\n        avatar_url\n        gravatar_id\n        url\n        html_url\n        followers_url\n        following_url\n        gists_url\n        starred_url\n        subscriptions_url\n        organizations_url\n        repos_url\n        events_url\n        received_events_url\n        type\n        site_admin\n      }\n      content_type\n      state\n      size\n      download_count\n      created_at\n      updated_at\n      browser_download_url\n    }\n    tarball_url\n    zipball_url\n    body\n    reactions {\n      url\n      total_count\n      _1plus\n      _1minus\n      laugh\n      hooray\n      confused\n      heart\n      rocket\n      eyes\n    }\n    repoId\n  }\n  issues(id: 172953845) {\n    _id {\n      oid\n    }\n    url\n    repository_url\n    labels_url\n    comments_url\n    events_url\n    html_url\n    id\n    node_id\n    Int\n    title\n    user {\n      login\n      id\n      node_id\n      avatar_url\n      gravatar_id\n      url\n      html_url\n      followers_url\n      following_url\n      gists_url\n      starred_url\n      subscriptions_url\n      organizations_url\n      repos_url\n      events_url\n      received_events_url\n      type\n      site_admin\n    }\n    labels {\n      id\n      node_id\n      url\n      name\n      color\n      default\n      description\n    }\n    state\n    locked\n    assignee\n    assignees {\n      login\n      id\n      node_id\n      avatar_url\n      gravatar_id\n      url\n      html_url\n      followers_url\n      following_url\n      gists_url\n      starred_url\n      subscriptions_url\n      organizations_url\n      repos_url\n      events_url\n      received_events_url\n      type\n      site_admin\n    }\n    milestone\n    comments\n    created_at\n    updated_at\n    closed_at\n    author_association\n    active_lock_reason\n    draft\n    pull_request {\n      url\n      html_url\n      diff_url\n      patch_url\n      merged_at\n    }\n    body\n    reactions {\n      url\n      total_count\n      _1plus\n      _1minus\n      laugh\n      hooray\n      confused\n      heart\n      rocket\n      eyes\n    }\n    timeline_url\n    performed_via_github_app\n    state_reason\n    repoId\n  }\n  commits(id: 172953845) {\n    _id {\n      oid\n    }\n    sha\n    node_id\n    commit {\n      author {\n        name\n        email\n        date\n      }\n      committer {\n        name\n        email\n        date\n      }\n      message\n      tree {\n        sha\n        url\n      }\n      url\n      comment_count\n      verification {\n        verified\n        reason\n        signature\n        payload\n      }\n    }\n    url\n    html_url\n    comments_url\n    author {\n      login\n      id\n      node_id\n      avatar_url\n      gravatar_id\n      url\n      html_url\n      followers_url\n      following_url\n      gists_url\n      starred_url\n      subscriptions_url\n      organizations_url\n      repos_url\n      events_url\n      received_events_url\n      type\n      site_admin\n    }\n    committer {\n      login\n      id\n      node_id\n      avatar_url\n      gravatar_id\n      url\n      html_url\n      followers_url\n      following_url\n      gists_url\n      starred_url\n      subscriptions_url\n      organizations_url\n      repos_url\n      events_url\n      received_events_url\n      type\n      site_admin\n    }\n    parents {\n      sha\n      url\n      html_url\n    }\n    repoId\n  }\n  contributors(id: 172953845) {\n    _id {\n      oid\n    }\n    login\n    id\n    node_id\n    avatar_url\n    gravatar_id\n    url\n    html_url\n    followers_url\n    following_url\n    gists_url\n    starred_url\n    subscriptions_url\n    organizations_url\n    repos_url\n    events_url\n    received_events_url\n    type\n    site_admin\n    contributions\n    repoId\n  }\n}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">4001</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/graphql</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+          <stringProp name="GraphQLHTTPSampler.query">query {
+  langs(id: 172953845) {
+    _id {
+      oid
+    }
+    languages {
+      name
+      value
+    }
+    repoId
+  }
+  releases(id: 172953845) {
+    _id {
+      oid
+    }
+    url
+    assets_url
+    upload_url
+    html_url
+    id
+    author {
+      login
+      id
+      node_id
+      avatar_url
+      gravatar_id
+      url
+      html_url
+      followers_url
+      following_url
+      gists_url
+      starred_url
+      subscriptions_url
+      organizations_url
+      repos_url
+      events_url
+      received_events_url
+      type
+      site_admin
+    }
+    node_id
+    tag_name
+    target_commitish
+    name
+    draft
+    prerelease
+    created_at
+    published_at
+    assets {
+      url
+      id
+      node_id
+      name
+      label
+      uploader {
+        login
+        id
+        node_id
+        avatar_url
+        gravatar_id
+        url
+        html_url
+        followers_url
+        following_url
+        gists_url
+        starred_url
+        subscriptions_url
+        organizations_url
+        repos_url
+        events_url
+        received_events_url
+        type
+        site_admin
+      }
+      content_type
+      state
+      size
+      download_count
+      created_at
+      updated_at
+      browser_download_url
+    }
+    tarball_url
+    zipball_url
+    body
+    reactions {
+      url
+      total_count
+      _1plus
+      _1minus
+      laugh
+      hooray
+      confused
+      heart
+      rocket
+      eyes
+    }
+    repoId
+  }
+  issues(id: 172953845) {
+    _id {
+      oid
+    }
+    url
+    repository_url
+    labels_url
+    comments_url
+    events_url
+    html_url
+    id
+    node_id
+    Int
+    title
+    user {
+      login
+      id
+      node_id
+      avatar_url
+      gravatar_id
+      url
+      html_url
+      followers_url
+      following_url
+      gists_url
+      starred_url
+      subscriptions_url
+      organizations_url
+      repos_url
+      events_url
+      received_events_url
+      type
+      site_admin
+    }
+    labels {
+      id
+      node_id
+      url
+      name
+      color
+      default
+      description
+    }
+    state
+    locked
+    assignee
+    assignees {
+      login
+      id
+      node_id
+      avatar_url
+      gravatar_id
+      url
+      html_url
+      followers_url
+      following_url
+      gists_url
+      starred_url
+      subscriptions_url
+      organizations_url
+      repos_url
+      events_url
+      received_events_url
+      type
+      site_admin
+    }
+    milestone
+    comments
+    created_at
+    updated_at
+    closed_at
+    author_association
+    active_lock_reason
+    draft
+    pull_request {
+      url
+      html_url
+      diff_url
+      patch_url
+      merged_at
+    }
+    body
+    reactions {
+      url
+      total_count
+      _1plus
+      _1minus
+      laugh
+      hooray
+      confused
+      heart
+      rocket
+      eyes
+    }
+    timeline_url
+    performed_via_github_app
+    state_reason
+    repoId
+  }
+  commits(id: 172953845) {
+    _id {
+      oid
+    }
+    sha
+    node_id
+    commit {
+      author {
+        name
+        email
+        date
+      }
+      committer {
+        name
+        email
+        date
+      }
+      message
+      tree {
+        sha
+        url
+      }
+      url
+      comment_count
+      verification {
+        verified
+        reason
+        signature
+        payload
+      }
+    }
+    url
+    html_url
+    comments_url
+    author {
+      login
+      id
+      node_id
+      avatar_url
+      gravatar_id
+      url
+      html_url
+      followers_url
+      following_url
+      gists_url
+      starred_url
+      subscriptions_url
+      organizations_url
+      repos_url
+      events_url
+      received_events_url
+      type
+      site_admin
+    }
+    committer {
+      login
+      id
+      node_id
+      avatar_url
+      gravatar_id
+      url
+      html_url
+      followers_url
+      following_url
+      gists_url
+      starred_url
+      subscriptions_url
+      organizations_url
+      repos_url
+      events_url
+      received_events_url
+      type
+      site_admin
+    }
+    parents {
+      sha
+      url
+      html_url
+    }
+    repoId
+  }
+  contributors(id: 172953845) {
+    _id {
+      oid
+    }
+    login
+    id
+    node_id
+    avatar_url
+    gravatar_id
+    url
+    html_url
+    followers_url
+    following_url
+    gists_url
+    starred_url
+    subscriptions_url
+    organizations_url
+    repos_url
+    events_url
+    received_events_url
+    type
+    site_admin
+    contributions
+    repoId
+  }
+}</stringProp>
+          <stringProp name="GraphQLHTTPSampler.variables"></stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="Get issues and releases" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument" enabled="true">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;query&quot;:&quot;query {\n  releases(id: 172953845) {\n    _id {\n      oid\n    }\n    url\n    assets_url\n    upload_url\n    html_url\n    id\n    author {\n      login\n      id\n      node_id\n      avatar_url\n      gravatar_id\n      url\n      html_url\n      followers_url\n      following_url\n      gists_url\n      starred_url\n      subscriptions_url\n      organizations_url\n      repos_url\n      events_url\n      received_events_url\n      type\n      site_admin\n    }\n    node_id\n    tag_name\n    target_commitish\n    name\n    draft\n    prerelease\n    created_at\n    published_at\n    assets {\n      url\n      id\n      node_id\n      name\n      label\n      uploader {\n        login\n        id\n        node_id\n        avatar_url\n        gravatar_id\n        url\n        html_url\n        followers_url\n        following_url\n        gists_url\n        starred_url\n        subscriptions_url\n        organizations_url\n        repos_url\n        events_url\n        received_events_url\n        type\n        site_admin\n      }\n      content_type\n      state\n      size\n      download_count\n      created_at\n      updated_at\n      browser_download_url\n    }\n    tarball_url\n    zipball_url\n    body\n    reactions {\n      url\n      total_count\n      _1plus\n      _1minus\n      laugh\n      hooray\n      confused\n      heart\n      rocket\n      eyes\n    }\n    repoId\n  }\n  issues(id: 172953845) {\n    _id {\n      oid\n    }\n    url\n    repository_url\n    labels_url\n    comments_url\n    events_url\n    html_url\n    id\n    node_id\n    Int\n    title\n    user {\n      login\n      id\n      node_id\n      avatar_url\n      gravatar_id\n      url\n      html_url\n      followers_url\n      following_url\n      gists_url\n      starred_url\n      subscriptions_url\n      organizations_url\n      repos_url\n      events_url\n      received_events_url\n      type\n      site_admin\n    }\n    labels {\n      id\n      node_id\n      url\n      name\n      color\n      default\n      description\n    }\n    state\n    locked\n    assignee\n    assignees {\n      login\n      id\n      node_id\n      avatar_url\n      gravatar_id\n      url\n      html_url\n      followers_url\n      following_url\n      gists_url\n      starred_url\n      subscriptions_url\n      organizations_url\n      repos_url\n      events_url\n      received_events_url\n      type\n      site_admin\n    }\n    milestone\n    comments\n    created_at\n    updated_at\n    closed_at\n    author_association\n    active_lock_reason\n    draft\n    pull_request {\n      url\n      html_url\n      diff_url\n      patch_url\n      merged_at\n    }\n    body\n    reactions {\n      url\n      total_count\n      _1plus\n      _1minus\n      laugh\n      hooray\n      confused\n      heart\n      rocket\n      eyes\n    }\n    timeline_url\n    performed_via_github_app\n    state_reason\n    repoId\n  }\n}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">4001</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/graphql</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+          <stringProp name="GraphQLHTTPSampler.query">query {
+  releases(id: 172953845) {
+    _id {
+      oid
+    }
+    url
+    assets_url
+    upload_url
+    html_url
+    id
+    author {
+      login
+      id
+      node_id
+      avatar_url
+      gravatar_id
+      url
+      html_url
+      followers_url
+      following_url
+      gists_url
+      starred_url
+      subscriptions_url
+      organizations_url
+      repos_url
+      events_url
+      received_events_url
+      type
+      site_admin
+    }
+    node_id
+    tag_name
+    target_commitish
+    name
+    draft
+    prerelease
+    created_at
+    published_at
+    assets {
+      url
+      id
+      node_id
+      name
+      label
+      uploader {
+        login
+        id
+        node_id
+        avatar_url
+        gravatar_id
+        url
+        html_url
+        followers_url
+        following_url
+        gists_url
+        starred_url
+        subscriptions_url
+        organizations_url
+        repos_url
+        events_url
+        received_events_url
+        type
+        site_admin
+      }
+      content_type
+      state
+      size
+      download_count
+      created_at
+      updated_at
+      browser_download_url
+    }
+    tarball_url
+    zipball_url
+    body
+    reactions {
+      url
+      total_count
+      _1plus
+      _1minus
+      laugh
+      hooray
+      confused
+      heart
+      rocket
+      eyes
+    }
+    repoId
+  }
+  issues(id: 172953845) {
+    _id {
+      oid
+    }
+    url
+    repository_url
+    labels_url
+    comments_url
+    events_url
+    html_url
+    id
+    node_id
+    Int
+    title
+    user {
+      login
+      id
+      node_id
+      avatar_url
+      gravatar_id
+      url
+      html_url
+      followers_url
+      following_url
+      gists_url
+      starred_url
+      subscriptions_url
+      organizations_url
+      repos_url
+      events_url
+      received_events_url
+      type
+      site_admin
+    }
+    labels {
+      id
+      node_id
+      url
+      name
+      color
+      default
+      description
+    }
+    state
+    locked
+    assignee
+    assignees {
+      login
+      id
+      node_id
+      avatar_url
+      gravatar_id
+      url
+      html_url
+      followers_url
+      following_url
+      gists_url
+      starred_url
+      subscriptions_url
+      organizations_url
+      repos_url
+      events_url
+      received_events_url
+      type
+      site_admin
+    }
+    milestone
+    comments
+    created_at
+    updated_at
+    closed_at
+    author_association
+    active_lock_reason
+    draft
+    pull_request {
+      url
+      html_url
+      diff_url
+      patch_url
+      merged_at
+    }
+    body
+    reactions {
+      url
+      total_count
+      _1plus
+      _1minus
+      laugh
+      hooray
+      confused
+      heart
+      rocket
+      eyes
+    }
+    timeline_url
+    performed_via_github_app
+    state_reason
+    repoId
+  }
+}</stringProp>
+          <stringProp name="GraphQLHTTPSampler.variables"></stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+        <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="Get two fields of repos" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument" enabled="true">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;query&quot;:&quot;query Query {\n  allRepos {\n    score\n    size\n  }\n}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">4001</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/graphql</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+          <stringProp name="GraphQLHTTPSampler.query">query Query {
+  allRepos {
+    score
+    size
+  }
+}
+</stringProp>
+          <stringProp name="GraphQLHTTPSampler.variables"></stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="DODAWANIE DANYCH - 100 POWTÓRZEŃ" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">101</stringProp>
+        </LoopController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="GraphQL HTTP Request" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument" enabled="true">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;query&quot;:&quot;mutation {\n  addLanguage(input: {repoId: ${__intSum(${__jm__Loop Controller__idx},1,)}, languages: [{name: \&quot;GTest\&quot;, value: 2}]})\n}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">4001</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/graphql</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+            <stringProp name="GraphQLHTTPSampler.query">mutation {
+  addLanguage(input: {repoId: ${__intSum(${__jm__Loop Controller__idx},1,)}, languages: [{name: &quot;GTest&quot;, value: 2}]})
+}</stringProp>
+            <stringProp name="GraphQLHTTPSampler.variables"></stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">charset</stringProp>
+                  <stringProp name="Header.value">utf-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <sentBytes>true</sentBytes>
+                  <url>true</url>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                  <connectTime>true</connectTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="AKTUALIZAOWANIE DANYCH 100 POWTÓRZEŃ" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">101</stringProp>
+        </LoopController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="GraphQL HTTP Request" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument" enabled="true">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;query&quot;:&quot;mutation {\n  updateLanguage(input: {repoId: ${__intSum(${__jm__Loop Controller__idx},1,)}, languages: [{name: \&quot;GTestUpdated\&quot;, value: 2}]})\n}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">4001</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/graphql</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+            <stringProp name="GraphQLHTTPSampler.query">mutation {
+  updateLanguage(input: {repoId: ${__intSum(${__jm__Loop Controller__idx},1,)}, languages: [{name: &quot;GTestUpdated&quot;, value: 2}]})
+}</stringProp>
+            <stringProp name="GraphQLHTTPSampler.variables"></stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <sentBytes>true</sentBytes>
+                  <url>true</url>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                  <connectTime>true</connectTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">charset</stringProp>
+                  <stringProp name="Header.value">utf-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="USUWANIE DANYCH - 100 POWTÓRZEŃ" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">1</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <LoopController guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">true</boolProp>
+          <stringProp name="LoopController.loops">101</stringProp>
+        </LoopController>
+        <hashTree>
+          <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="GraphQL HTTP Request" enabled="true">
+            <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+              <collectionProp name="Arguments.arguments">
+                <elementProp name="" elementType="HTTPArgument" enabled="true">
+                  <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                  <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;query&quot;:&quot;mutation {\n  removeLanguage(id: ${__intSum(${__jm__Loop Controller__idx},1,)})\n}&quot;}</stringProp>
+                  <stringProp name="Argument.metadata">=</stringProp>
+                  <boolProp name="HTTPArgument.use_equals">true</boolProp>
+                </elementProp>
+              </collectionProp>
+            </elementProp>
+            <stringProp name="HTTPSampler.domain">localhost</stringProp>
+            <stringProp name="HTTPSampler.port">4001</stringProp>
+            <stringProp name="HTTPSampler.protocol"></stringProp>
+            <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+            <stringProp name="HTTPSampler.path">/graphql</stringProp>
+            <stringProp name="HTTPSampler.method">POST</stringProp>
+            <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+            <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+            <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+            <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+            <stringProp name="GraphQLHTTPSampler.query">mutation {
+  removeLanguage(id: ${__intSum(${__jm__Loop Controller__idx},1,)})
+}</stringProp>
+            <stringProp name="GraphQLHTTPSampler.variables"></stringProp>
+            <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+            <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+            <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+            <stringProp name="HTTPSampler.response_timeout"></stringProp>
+          </HTTPSamplerProxy>
+          <hashTree>
+            <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+              <collectionProp name="HeaderManager.headers">
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">content-type</stringProp>
+                  <stringProp name="Header.value">application/json</stringProp>
+                </elementProp>
+                <elementProp name="" elementType="Header">
+                  <stringProp name="Header.name">charset</stringProp>
+                  <stringProp name="Header.value">utf-8</stringProp>
+                </elementProp>
+              </collectionProp>
+            </HeaderManager>
+            <hashTree/>
+            <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+              <boolProp name="ResultCollector.error_logging">false</boolProp>
+              <objProp>
+                <name>saveConfig</name>
+                <value class="SampleSaveConfiguration">
+                  <time>true</time>
+                  <latency>true</latency>
+                  <timestamp>true</timestamp>
+                  <success>true</success>
+                  <label>true</label>
+                  <code>true</code>
+                  <message>true</message>
+                  <threadName>true</threadName>
+                  <dataType>true</dataType>
+                  <encoding>false</encoding>
+                  <assertions>true</assertions>
+                  <subresults>true</subresults>
+                  <responseData>false</responseData>
+                  <samplerData>false</samplerData>
+                  <xml>false</xml>
+                  <fieldNames>true</fieldNames>
+                  <responseHeaders>false</responseHeaders>
+                  <requestHeaders>false</requestHeaders>
+                  <responseDataOnError>false</responseDataOnError>
+                  <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                  <assertionsResultsToSave>0</assertionsResultsToSave>
+                  <bytes>true</bytes>
+                  <sentBytes>true</sentBytes>
+                  <url>true</url>
+                  <threadCounts>true</threadCounts>
+                  <idleTime>true</idleTime>
+                  <connectTime>true</connectTime>
+                </value>
+              </objProp>
+              <stringProp name="filename"></stringProp>
+            </ResultCollector>
+            <hashTree/>
+          </hashTree>
+        </hashTree>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="POBIERANIE DANYCH - 100 POWTORZEŃ" enabled="true">
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">10</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">100</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+        <boolProp name="ThreadGroup.same_user_on_next_iteration">true</boolProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="GraphQLHTTPSamplerGui" testclass="HTTPSamplerProxy" testname="Get all repos" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument" enabled="true">
+                <boolProp name="HTTPArgument.always_encode">false</boolProp>
+                <stringProp name="Argument.value">{&quot;operationName&quot;:null,&quot;query&quot;:&quot;query  {\n  allRepos {\n    _id {\n      oid\n    }\n    id\n    node_id\n    name\n    full_name\n    private\n    owner {\n      login\n      id\n      node_id\n      avatar_url\n      gravatar_id\n      url\n      html_url\n      followers_url\n      following_url\n      gists_url\n      starred_url\n      subscriptions_url\n      repos_url\n      events_url\n      organizations_url\n      received_events_url\n      site_admin\n      type\n    }\n    html_url\n    description\n    fork\n    url\n    forks_url\n    keys_url\n    collaborators_url\n    teams_url\n    hooks_url\n    issue_events_url\n    events_url\n    assignees_url\n    branches_url\n    tags_url\n    blobs_url\n    git_tags_url\n    git_refs_url\n    trees_url\n    statuses_url\n    languages_url\n    stargazers_url\n    contributors_url\n    subscribers_url\n    commits_url\n    git_commits_url\n    subscription_url\n    issue_comment_url\n    comments_url\n    contents_url\n    compare_url\n    merges_url\n    archive_url\n    downloads_url\n    issues_url\n    pulls_url\n    milestones_url\n    notifications_url\n    labels_url\n    releases_url\n    deployments_url\n    created_at\n    updated_at\n    pushed_at\n    git_url\n    ssh_url\n    clone_url\n    svn_url\n    homepage\n    size\n    stargazers_count\n    watchers_count\n    language\n    has_issues\n    has_projects\n    has_downloads\n    has_wiki\n    has_pages\n    has_discussions\n    forks_count\n    mirror_url\n    disabled\n    archived\n    open_issues_count\n    license {\n      url\n      node_id\n      spdx_id\n      name\n      key\n    }\n    allow_forking\n    is_template\n    web_commit_signoff_required\n    topics\n    visibility\n    forks\n    open_issues\n    watchers\n    default_branch\n    score\n  }\n}&quot;}</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+                <boolProp name="HTTPArgument.use_equals">true</boolProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">4001</stringProp>
+          <stringProp name="HTTPSampler.protocol"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="HTTPSampler.path">/graphql</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.follow_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+          <boolProp name="HTTPSampler.DO_MULTIPART_POST">false</boolProp>
+          <stringProp name="GraphQLHTTPSampler.operationName"></stringProp>
+          <stringProp name="GraphQLHTTPSampler.query">query  {
+  allRepos {
+    _id {
+      oid
+    }
+    id
+    node_id
+    name
+    full_name
+    private
+    owner {
+      login
+      id
+      node_id
+      avatar_url
+      gravatar_id
+      url
+      html_url
+      followers_url
+      following_url
+      gists_url
+      starred_url
+      subscriptions_url
+      repos_url
+      events_url
+      organizations_url
+      received_events_url
+      site_admin
+      type
+    }
+    html_url
+    description
+    fork
+    url
+    forks_url
+    keys_url
+    collaborators_url
+    teams_url
+    hooks_url
+    issue_events_url
+    events_url
+    assignees_url
+    branches_url
+    tags_url
+    blobs_url
+    git_tags_url
+    git_refs_url
+    trees_url
+    statuses_url
+    languages_url
+    stargazers_url
+    contributors_url
+    subscribers_url
+    commits_url
+    git_commits_url
+    subscription_url
+    issue_comment_url
+    comments_url
+    contents_url
+    compare_url
+    merges_url
+    archive_url
+    downloads_url
+    issues_url
+    pulls_url
+    milestones_url
+    notifications_url
+    labels_url
+    releases_url
+    deployments_url
+    created_at
+    updated_at
+    pushed_at
+    git_url
+    ssh_url
+    clone_url
+    svn_url
+    homepage
+    size
+    stargazers_count
+    watchers_count
+    language
+    has_issues
+    has_projects
+    has_downloads
+    has_wiki
+    has_pages
+    has_discussions
+    forks_count
+    mirror_url
+    disabled
+    archived
+    open_issues_count
+    license {
+      url
+      node_id
+      spdx_id
+      name
+      key
+    }
+    allow_forking
+    is_template
+    web_commit_signoff_required
+    topics
+    visibility
+    forks
+    open_issues
+    watchers
+    default_branch
+    score
+  }
+}</stringProp>
+          <stringProp name="GraphQLHTTPSampler.variables"></stringProp>
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <stringProp name="HTTPSampler.embedded_url_re"></stringProp>
+          <stringProp name="HTTPSampler.connect_timeout"></stringProp>
+          <stringProp name="HTTPSampler.response_timeout"></stringProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager" enabled="true">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">content-type</stringProp>
+                <stringProp name="Header.value">application/json</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+          <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+          <ResultCollector guiclass="GraphVisualizer" testclass="ResultCollector" testname="Graph Results" enabled="true">
+            <boolProp name="ResultCollector.error_logging">false</boolProp>
+            <objProp>
+              <name>saveConfig</name>
+              <value class="SampleSaveConfiguration">
+                <time>true</time>
+                <latency>true</latency>
+                <timestamp>true</timestamp>
+                <success>true</success>
+                <label>true</label>
+                <code>true</code>
+                <message>true</message>
+                <threadName>true</threadName>
+                <dataType>true</dataType>
+                <encoding>false</encoding>
+                <assertions>true</assertions>
+                <subresults>true</subresults>
+                <responseData>false</responseData>
+                <samplerData>false</samplerData>
+                <xml>false</xml>
+                <fieldNames>true</fieldNames>
+                <responseHeaders>false</responseHeaders>
+                <requestHeaders>false</requestHeaders>
+                <responseDataOnError>false</responseDataOnError>
+                <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+                <assertionsResultsToSave>0</assertionsResultsToSave>
+                <bytes>true</bytes>
+                <sentBytes>true</sentBytes>
+                <url>true</url>
+                <threadCounts>true</threadCounts>
+                <idleTime>true</idleTime>
+                <connectTime>true</connectTime>
+              </value>
+            </objProp>
+            <stringProp name="filename"></stringProp>
+          </ResultCollector>
+          <hashTree/>
+        </hashTree>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

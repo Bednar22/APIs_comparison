@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "0a19f48e-e7ad-40dd-8ec7-fe97f15c9f53",
+		"name": "REST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all repos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/repos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get repo by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/repos/13491895",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"repos",
+						"13491895"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new language object",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dataArray = [1,2,3,4,5,6,7,8,9,10];\r",
+							"\r",
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"\r",
+							"pm.globals.set(\"varVolume\", dataArray[item]);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"pm.globals.set(\"itemOfArray\", Number(item) + 1);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"repoId\": {{varVolume}},\r\n    \"languages\": [\r\n        {\r\n            \"name\": \"Test\",\r\n            \"value\": 22\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/languages/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"languages",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update language object",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dataArray = [1,2,3,4,5,6,7,8,9,10];\r",
+							"\r",
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"\r",
+							"pm.globals.set(\"varVolume\", dataArray[item]);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"pm.globals.set(\"itemOfArray\", Number(item) + 1);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"languages\": [\r\n        {\r\n            \"name\": \"TestUpdted\",\r\n            \"value\": 2222\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/languages/{{varVolume}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"languages",
+						"{{varVolume}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete language object",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"pm.globals.set(\"itemOfArray\", Number(item) + 1);"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const dataArray = [1,2,3,4,5,6,7,8,9,10];\r",
+							"\r",
+							"let item = pm.globals.get(\"itemOfArray\");\r",
+							"\r",
+							"pm.globals.set(\"varVolume\", dataArray[item]);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/languages/{{varVolume}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"languages",
+						"{{varVolume}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get languages for repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/languages/172953845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"languages",
+						"172953845"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get commits for repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/commits/172953845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"commits",
+						"172953845"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get issues for repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/issues/172953845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"issues",
+						"172953845"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get contributors for repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/contributors/172953845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"contributors",
+						"172953845"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get releases for repo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/releases/172953845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"releases",
+						"172953845"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AllInfo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/repos/allinfo/172953845",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"repos",
+						"allinfo",
+						"172953845"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
